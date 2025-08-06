@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  font-family: "Open Sans", "Roboto", Arial, sans-serif;
+  background: #f9f9f9;
+  color: #333;
+  line-height: 1.5;
+}
+
+.page-heading {
+  text-align: center;
+  font-weight: 600;
+  font-size: 36px;
+  margin-bottom: 1rem;
+}
+
+.container {
+  display: flex;
+  gap: 1.5rem;
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  align-items: flex-start;
+}
+
+.product-grid {
+  width: 1040px;
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.product-card {
+  background: #fff;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  width: 326px;
+}
+
+.product-card:hover {
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+}
+
+.product-card img {
+  width: 100%;
+  height: 326px;
+  object-fit: cover;
+  display: block;
+}
+
+.product-card h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 1rem 1rem 0.5rem 0;
+}
+
+.product-card .price {
+  font-size: 18px;
+  margin: 0 1rem 0.5rem 0;
+  color: #666;
+}
+
+.toggle-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-weight: 600;
+  color: #24272b;
+  background: #fff;
+  border: 2px solid black;
+  height: 52px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.toggle-button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.toggle-button.active {
+  background: #444444;
+  color: #fff;
+}
+
+.toggle-button svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+}
+
+.toggle-button svg path {
+  fill: currentColor;
+}
+
+.bundle-sidebar {
+  flex: 1;
+  background: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  position: sticky;
+  top: 2rem;
+  width: 300px;
+  border: 3px solid black;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.sidebar-title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.progress-bar {
+  width: 100%;
+  height: 8px;
+  background: #eee;
+  border-radius: 4px;
+  overflow: hidden;
+  margin: 16px 0 10px;
+}
+.progress-fill {
+  height: 100%;
+  background: #000;
+  width: 0%;
+  transition: width 0.25s ease;
+}
+
+.selected-products {
+  list-style: none;
+  margin: 1rem 0;
+  padding: 0;
+  width: 100%;
+  display: grid;
+  grid-template-rows: repeat(3, 88px);
+  gap: 0.75rem;
+  max-height: calc((88px + 12px) * 3);
+  overflow: hidden;
+}
+
+.selected-products li {
+  display: flex;
+  align-items: center;
+  background: #fafafa;
+  border: 1px dashed rgba(0, 0, 0, 0.06);
+  height: 88px;
+  min-height: 88px;
+  overflow: hidden;
+}
+
+.selected-products img.thumb {
+  width: 88px;
+  height: 88px;
+  object-fit: cover;
+  margin-right: 22px;
+  flex: 0 0 88px;
+}
+
+.selected-products li .meta {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.selected-products .meta .name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 4px;
+}
+
+.selected-products .meta .price-small {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0;
+  padding-bottom: 3px;
+}
+
+.selected-product-quantity-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+}
+
+.selected-product-quantity-container .qty {
+  display: inline-flex;
+  gap: 6px;
+  border: 1px solid #ebebeb;
+  background: #f5f5f5;
+  padding: 4px;
+  align-items: center;
+}
+
+.selected-product-quantity-container .qty button {
+  border: none;
+  width: 30px;
+  height: 30px;
+  font-size: 16px;
+  background: transparent;
+  cursor: pointer;
+}
+
+.selected-product-quantity-container svg {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  border-style: none;
+  background-color: transparent;
+}
+
+.remove-item {
+  border-style: none;
+  background-color: transparent;
+}
+
+.selected-products li.empty {
+  justify-content: center;
+  color: #bbb;
+  font-style: italic;
+  font-size: 0.95rem;
+}
+
+.summary {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.discount,
+.subtotal {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.discount .label,
+.subtotal .label {
+  font-weight: 500;
+  color: #333;
+}
+
+.discount .value,
+.subtotal .value {
+  font-weight: 600;
+  color: #000;
+}
+
+.divider {
+  border: none;
+  border-top: 1px solid #ddd;
+}
+
+.add-to-cart {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  width: 100%;
+  padding: 0.75rem;
+  font-weight: 600;
+  background: #000;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+.add-to-cart:enabled {
+  opacity: 1;
+}
+
+.add-to-cart svg {
+  width: 17px;
+  height: 17px;
+  flex: 0 0 17px;
+}
+
+.add-to-cart .btn-text {
+  display: inline-block;
+}
+
+@media (max-width: 1024px) {
+  .container {
+    gap: 1rem;
+    padding: 0 1rem;
+  }
+  .product-grid {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bundle-sidebar {
+    width: 360px;
+    position: relative;
+    top: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+  }
+  .bundle-sidebar {
+    width: 100%;
+    position: relative;
+    top: auto;
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  .product-card {
+    width: 100%;
+    height: auto;
+  }
+  .product-card img {
+    height: 260px;
+  }
+  .selected-products {
+    gap: 0.5rem;
+  }
+  .bundle-sidebar {
+    padding: 1rem;
+  }
+  .page-heading {
+    font-size: 24px;
+  }
+}

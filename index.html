@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="stylesheet" href="./style.css" />
+    <title>Bundle Builder</title>
+  </head>
+  <body>
+    <h1 class="page-heading">Buy 3 and Save 30%</h1>
+    <main class="container">
+      <section class="product-grid"></section>
+
+      <aside class="bundle-sidebar">
+        <h2 class="sidebar-title">Create a Bundle</h2>
+        <p>Add at <b>least 3</b> products and <b>Save 30%.</b></p>
+        <div class="progress-bar-container">
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <ul class="selected-products"></ul>
+
+        <div class="summary">
+          <hr class="divider" />
+          <div class="discount">
+            <span class="label">Discount</span>
+            <span class="value">- $0.00 (0%)</span>
+          </div>
+          <hr class="divider" />
+          <div class="subtotal">
+            <span class="label">Subtotal</span>
+            <span class="value">$0.00</span>
+          </div>
+
+          <button
+            class="add-to-cart"
+            disabled
+            aria-live="polite"
+            data-added="false"
+          >
+            <span class="btn-text">Add 3 Items to Proceed</span>
+            <svg
+              width="17"
+              height="17"
+              viewBox="0 0 17 17"
+              aria-hidden="true"
+              focusable="false"
+            >
+              <path
+                d="M12.19 9.03 7.19 14.03a.75.75 0 0 1-1.06 0 .75.75 0 0 1 0-1.06L10.6 8.5 6.13 4.03a.75.75 0 1 1 1.06-1.06l5 5a.75.75 0 0 1 0 1.06Z"
+                fill="white"
+              />
+            </svg>
+          </button>
+        </div>
+      </aside>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
