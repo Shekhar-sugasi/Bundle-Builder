@@ -173,6 +173,9 @@ selectedList.addEventListener("click", (e) => {
 
 addToCartBtn.addEventListener("click", () => {
   if (addToCartBtn.disabled) return;
+  const selectedBundle = slots.filter((item) => item !== null);
+  console.log("Selected Bundle:", selectedBundle);
+
   const added = addToCartBtn.dataset.added === "true";
   addToCartBtn.querySelector(".btn-text").textContent = added
     ? "Add 3 Items to Proceed"
