@@ -151,7 +151,7 @@ function toggleProduct(id) {
     }
     slots[empty] = products.find((p) => p.id === id);
   }
-  updateSidebar();
+  renderSelectedProducts();
 }
 
 // event listeners
@@ -166,7 +166,7 @@ selectedList.addEventListener("click", (e) => {
     const idx = slots.findIndex((s) => s && s.id === id);
     if (idx !== -1) {
       slots[idx] = null;
-      updateSidebar();
+      renderSelectedProducts();
     }
   }
 });
