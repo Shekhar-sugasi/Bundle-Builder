@@ -1,7 +1,6 @@
-<h1>Bundle Builder – Coding Assessment L2</h1>
+<h1>Bundle Builder</h1>
 
 <p>
-  This is my submission for the Coding Assessment Level 2.
   It is a simple <strong>Bundle Builder</strong> page where the user can add up to 3 products to a bundle and get a discount.
 </p>
 
@@ -30,5 +29,4 @@
  <ul>
     <li>The project is built with plain <strong>HTML, CSS, and JavaScript</strong> only.</li>
     <li>Fully responsive for desktop and mobile.</li>
-    <li>All functionalities work as expected and were tested before submission.</li>
  </ul>
